@@ -38,7 +38,6 @@ contract('LANDProxy', accounts => {
   }
 
   describe('upgrade', () => {
-
     beforeEach(async function() {
       proxy = await LANDProxy.new(creationParams)
       registry = await LANDRegistry.new(creationParams)
@@ -60,6 +59,11 @@ contract('LANDProxy', accounts => {
       await assertRevert(proxy.upgrade(
         registry.address, hacker, Object.assign({}, creationParams, {from: hacker})
       ))
+    })
+
+    it('should throw if called initialized with different owner', async () => {
+      await proxy.upgrade(registry.address, owner, creationParams)
+      await assertRevert(land.initialize(hacker, {...creationParams, from: hacker}))
     })
   })
 })
