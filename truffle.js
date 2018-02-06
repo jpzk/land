@@ -1,25 +1,21 @@
 require('babel-register');
 require('babel-polyfill');
+var HDWalletProvider = require("truffle-hdwallet-provider");
+var mnemonic = "candy maple cake sugar pudding cream honey rich smooth crumble sweet treat";
 
 module.exports = {
   networks: {
-    livenet: {
-      host: "localhost",
-      port: 8545,
-      gas: 70000000,
-      network_id: "*" // Match any network id
-    },
-    development: {
-      host: "localhost",
-      port: 18545,
-      gas: 100000000,
-      network_id: "*" // Match any network id
-    },
     ropsten: {
-      host: "localhost",
-      port: 18545,
-      network_id: 3, // official id of the ropsten network
-      gas: 30000000
-    }
+      provider: function() {
+        return new HDWalletProvider(mnemonic, "https://ropsten.infura.io/MaaVBVQmkcdH9PUQMSp7")
+      },
+      network_id: 3
+    },
+    livenet: {
+      provider: function() {
+        return new HDWalletProvider(mnemonic, "https://mainnet.infura.io/MaaVBVQmkcdH9PUQMSp7")
+      },
+      network_id: 1
+    }   
   }
 };
