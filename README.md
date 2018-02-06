@@ -1,3 +1,7 @@
+# LAND cli 
+
+node_modules/babel-cli/bin/babel-node.js -- bin/LANDRegistry.js ownerOfLand -x 13 -y -7
+
 # LAND
 
 Contracts for Decentraland's World.
