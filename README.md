@@ -1,6 +1,16 @@
-# LAND cli 
+# LAND CLI 
 
-node_modules/babel-cli/bin/babel-node.js -- bin/LANDRegistry.js ownerOfLand -x 13 -y -7
+Small cli arround the LAND smart contract, using fixed Infura URL with common seeds, no ethereum node required.
+
+## Install
+
+`npm install`
+
+## Owner Of Land
+
+`land git:(master) node_modules/babel-cli/bin/babel-node.js -- bin/LANDRegistry.js ownerOfLand -x 13 -y 3`
+
+`Land owner is 0xd1dd93a4ad3c7b03064474e67a03c52fe170cc69`
 
 # LAND
 
