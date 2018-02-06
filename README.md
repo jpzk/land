@@ -9,6 +9,8 @@ Small cli arround the LAND smart contract, using fixed Infura URL with common se
 
 `$ npm install`
 
+`$ truffle compile` 
+
 ## Owner Of Land
 
 `$ node_modules/babel-cli/bin/babel-node.js -- bin/LANDRegistry.js ownerOfLand -x 13 -y 3`
